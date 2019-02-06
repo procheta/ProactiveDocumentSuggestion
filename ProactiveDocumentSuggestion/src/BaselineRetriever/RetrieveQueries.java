@@ -80,6 +80,8 @@ public class RetrieveQueries {
                 HashMap<String, Double> wMap = getDistribution(retrievedQueries);
                 count++;
                 Iterator it = wMap.keySet().iterator();
+	        for(String s: st)	
+		bw.write(s+":"+"5 ");
                 
                 while(it.hasNext()){
                     String key = (String) it.next();
@@ -175,7 +177,9 @@ public class RetrieveQueries {
         }
          System.out.println(qryList.size());
          if(tdocs.scoreDocs.length == 0)
-         { System.out.println(qryText);  System.out.println("hhhhhhhhhhhhhhh");}
+         { 
+		System.out.println(qryText); 
+	 }
         return qryList;
     }
 
