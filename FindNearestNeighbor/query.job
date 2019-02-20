@@ -1,0 +1,17 @@
+#!/bin/sh
+#SBATCH -N 1    # how many nodes are required (in most cases it is 1)
+#SBATCH -t 1-02:30:00    # maximum execution time, in this case one day, two hours and thirty minutes (optional)
+#SBATCH -p compute    # which partition to run on ('compute' is default)
+#SBATCH -J wordVecTrain    # arbitrary name for the job (you choose)
+
+# load modules if needed (modules are used in the Boole cluster only)
+#module load staskfarm
+# check which modules are available
+#module av
+
+# uncomment the following to get a log of memory usage
+# vmstat -S M {interval_secs} >> memory_usage_$SLURM_JOBID.log &
+
+./findNeighbor /home/procheta/AolTemporal.bin /home/procheta/testQueries.txt 
+echo hello
+
